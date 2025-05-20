@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Copier index.html') {
             steps {
-                sh 'sudo cp index.html /var/www/html/index.html'
+                sh 'sudo cp index.html /Library/WebServer/Documents/index.html'
             }
         }
 
         stage('Redémarrer Apache2') {
             steps {
-                sh 'sudo systemctl restart apache2'
+                sh 'sudo apachectl restart'
             }
         }
     }
@@ -24,4 +24,5 @@ pipeline {
         }
     }
 }
+
  
